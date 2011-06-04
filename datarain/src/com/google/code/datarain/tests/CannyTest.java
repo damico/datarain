@@ -6,12 +6,17 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.jhlabs.image.ThresholdFilter;
+
 public class CannyTest {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		
+		
 		//create the detector
 		
 		BufferedImage img = null;
@@ -20,6 +25,15 @@ public class CannyTest {
 		} catch (IOException e) {
 		}
 		
+
+		
+		ThresholdFilter th = new ThresholdFilter();
+		th.setLowerThreshold(100);
+		BufferedImage res = th.filter(img, null);
+		
+		buffImg2File(res, "/tmp/a.png");
+		
+		
 		CannyEdgeDetector detector = new CannyEdgeDetector();
 
 		//adjust its parameters as desired
@@ -27,18 +41,22 @@ public class CannyTest {
 		detector.setHighThreshold(1f);
 
 		//apply it to an image
-		detector.setSourceImage(img);
+		detector.setSourceImage(res);
 		detector.process();
 		BufferedImage edges = detector.getEdgesImage();
 		
+		buffImg2File(edges, "/tmp/b.png");
+
+	}
+
+	private static void buffImg2File(BufferedImage res, String filePath) {
 		try {
 		    
-		    File outputfile = new File("/tmp/saved.png");
-		    ImageIO.write(edges, "png", outputfile);
+		    File outputfile = new File(filePath);
+		    ImageIO.write(res, "png", outputfile);
 		} catch (IOException e) {
 		    
 		}
-
 	}
 
 }
