@@ -3,6 +3,9 @@
 
 == Tarefas ==
 
+http://www.jhlabs.com/ip/filters/index.html
+http://www.tomgibara.com/computer-vision/canny-edge-detector
+
 edge detector
 crop
 Canny edge detector
