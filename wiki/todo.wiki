@@ -3,6 +3,10 @@
 
 == Tarefas ==
 
+edge detector
+crop
+Canny edge detector
+
  * Construir um pluviometro
 
  * Celular com api para envio de sms
