@@ -3,10 +3,24 @@
 
 == Tarefas ==
 
-* Construir um pluviometro
+ * Construir um pluviometro
 
-* Celular com api para envio de sms
+ * Celular com api para envio de sms
 
-* Celular com camera
+ * Celular com camera
 
-* Escrever protótipo de leitura do pluviometro
+ * Escrever protótipo de leitura do pluviometro
+
+== Bugs ==
+
+JMF install on linux:
+
+{{{
+ * Unpacking...
+tail: cannot open `+309' for reading: No such file or directory
+Extracting...
+./install.sfx.9393: line 1: ==: No such file or directory
+./install.sfx.9393: line 3: syntax error near unexpected token `)'
+./install.sfx.9393: line 3: `5���3��n�N�_�^����[UQU599��;����r���Ѣ_���KKQQR�����rqp����"���hj��W�jYn�d!���������L���Lŕ^	 88�$���ծ��,����iѭ����V~�mn.�7w^��,�;M��`�򕖑A$D����� @	ɺ�wA'
+
+}}}
