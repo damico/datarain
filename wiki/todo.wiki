@@ -13,7 +13,7 @@
 
 == Bugs ==
 
-JMF install on linux:
+JMF install on linux (Debian/Ubuntu):
 
 {{{
  * Unpacking...
@@ -24,3 +24,34 @@ Extracting...
 ./install.sfx.9393: line 3: `5���3��n�N�_�^����[UQU599��;����r���
 
 }}}
+
+== Solution ===
+
+1 - Erase any jmf.bin file that you had download. Download a new one and put in a folder, and check file size:
+
+ls -l
+
+This is a probably result:
+-rwxr-xr-x 1 nobody nogroup 2419679 2009-03-07 11:52 jmf-2_1_1e-linux-i586.bin
+
+filezise: 2419679 bytes
+
+2 - Give permission to file:
+chmod +x jmf-2_1_1e-linux-i586.bin
+
+THIS IS THE MOST IMPORTANT STEP
+3 - Edit jmf-2_1_1e-linux-i586.bin downloaded file with vim as root
+vim -b jmf-2_1_1e-linux-i586.bin (YOU HAVE TO USE THIS COMMAND -b BECAUSE IT'S A BINARY FILE)
+
+4 - At vim type this:
+/tailPress ENTER.
+
+Then press the key l to move to the left on that line, until the sign +.
+
+Press i to insert text, and insert -n , with a space. Press ENTER.
+
+The new line should be like this:
+tail -n +309 $0 > $outname
+5 - Now press ESC and type:
+:wqPress ENTER.
+6 - Now execute the jmf bin file.
