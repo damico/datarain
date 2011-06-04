@@ -15,14 +15,13 @@ public class CannyTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-		
+			
 		
 		//create the detector
 		
 		BufferedImage img = null;
 		try {
-		    img = ImageIO.read(new File(Constants.IMAGE_SOURCE + "test1.jpg"));
+		    img = ImageIO.read(new File(Constants.IMAGE_SOURCE + Constants.FILE_NAME_TARGET));
 		} catch (IOException e) {
 		}
 		
@@ -32,7 +31,7 @@ public class CannyTest {
 		th.setLowerThreshold(100);
 		BufferedImage res = th.filter(img, null);
 		
-		buffImg2File(res, Constants.IMAGE_INTERMEDIATE_TARGET + "a.png");
+		buffImg2File(res, Constants.IMAGE_INTERMEDIATE_TARGET + Constants.FILE_NAME_INTERMEDIATE);
 		
 		
 		CannyEdgeDetector detector = new CannyEdgeDetector();
@@ -46,7 +45,7 @@ public class CannyTest {
 		detector.process();
 		BufferedImage edges = detector.getEdgesImage();
 		
-		buffImg2File(edges, Constants.IMAGE_FINAL_TARGET + "b.png");
+		buffImg2File(edges, Constants.IMAGE_FINAL_TARGET + Constants.FILE_NAME_TARGET);
 
 	}
 
