@@ -1,6 +1,6 @@
 #todo
 
-- Construir um pluviometro
-- Celular com api para envio de sms
-- Celular com camera
-- Escrever protótipo de leitura do pluviometro
+# Construir um pluviometro
+# Celular com api para envio de sms
+# Celular com camera
+# Escrever protótipo de leitura do pluviometro
