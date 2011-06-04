@@ -21,7 +21,7 @@ public class CannyTest {
 		
 		BufferedImage img = null;
 		try {
-		    img = ImageIO.read(new File(Constants.IMAGE_SOURCE + Constants.FILE_NAME_TARGET));
+		    img = ImageIO.read(new File(Constants.IMAGE_SOURCE + Constants.FILE_NAME_SOURCE));
 		} catch (IOException e) {
 		}
 		
