@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.google.code.datarain.utils.Constants;
 import com.jhlabs.image.ThresholdFilter;
 
 public class CannyTest {
@@ -21,7 +22,7 @@ public class CannyTest {
 		
 		BufferedImage img = null;
 		try {
-		    img = ImageIO.read(new File("/home/jdamico/Downloads/test1.jpg"));
+		    img = ImageIO.read(new File(Constants.IMAGE_SOURCE + "test1.jpg"));
 		} catch (IOException e) {
 		}
 		
@@ -31,7 +32,7 @@ public class CannyTest {
 		th.setLowerThreshold(100);
 		BufferedImage res = th.filter(img, null);
 		
-		buffImg2File(res, "/tmp/a.png");
+		buffImg2File(res, Constants.IMAGE_INTERMEDIATE_TARGET + "a.png");
 		
 		
 		CannyEdgeDetector detector = new CannyEdgeDetector();
@@ -45,7 +46,7 @@ public class CannyTest {
 		detector.process();
 		BufferedImage edges = detector.getEdgesImage();
 		
-		buffImg2File(edges, "/tmp/b.png");
+		buffImg2File(edges, Constants.IMAGE_FINAL_TARGET + "b.png");
 
 	}
 
