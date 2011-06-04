@@ -55,3 +55,6 @@ tail -n +309 $0 > $outname
 5 - Now press ESC and type:
 :wqPress ENTER.
 6 - Now execute the jmf bin file.
+
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JMFHOME/lib:$JAVA_HOME/jre/lib/i386:$JAVA_HOME/jre/lib/i386/client
+export LD_LIBRARY_PATH
