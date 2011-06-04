@@ -3,10 +3,11 @@
 
 == Tarefas ==
 
-http://www.jhlabs.com/ip/filters/index.html
-http://www.tomgibara.com/computer-vision/canny-edge-detector
-http://www.rgagnon.com/javadetails/java-0257.html
-
+ * http://www.jhlabs.com/ip/filters/index.html
+ * http://www.tomgibara.com/computer-vision/canny-edge-detector
+ * http://www.rgagnon.com/javadetails/java-0257.html
+ * http://getablogger.blogspot.com/2008/01/android-how-to-post-file-to-php-server.html
+ * http://www.anddev.org/upload_files_to_web_server-t443-s30.html
 edge detector
 crop
 Canny edge detector
