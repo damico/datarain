@@ -5,6 +5,7 @@
 
 http://www.jhlabs.com/ip/filters/index.html
 http://www.tomgibara.com/computer-vision/canny-edge-detector
+http://www.rgagnon.com/javadetails/java-0257.html
 
 edge detector
 crop
