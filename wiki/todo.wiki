@@ -67,6 +67,7 @@ export LD_LIBRARY_PATH
  * http://getablogger.blogspot.com/2008/01/android-how-to-post-file-to-php-server.html
  * http://www.anddev.org/upload_files_to_web_server-t443-s30.html
  * http://revistagloborural.globo.com/GloboRural/0,6993,EEC1582439-4528,00.html
+ * http://roberioprofciencias.blogspot.com/2009/04/pluviometro-pet-caseiro-e-eficiente.html
 
 edge detector
 crop
