@@ -1,38 +1,46 @@
 package com.google.code.datarain.tests;
 
 import java.awt.image.BufferedImage;
+import java.awt.image.CropImageFilter;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import com.google.code.datarain.utils.Constants;
+import com.jhlabs.image.EdgeFilter;
+import com.jhlabs.image.GrayscaleFilter;
 import com.jhlabs.image.ThresholdFilter;
 
-public class CannyTest {
+public class DataRainPrototype {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-			
+		
+		
 		
 		//create the detector
 		
 		BufferedImage img = null;
 		try {
-		    img = ImageIO.read(new File(Constants.IMAGE_SOURCE + Constants.FILE_NAME_SOURCE));
+		    img = ImageIO.read(new File("/tmp/real-test.jpg"));
 		} catch (IOException e) {
 		}
 		
+		GrayscaleFilter gf = new GrayscaleFilter();
 
 		
 		ThresholdFilter th = new ThresholdFilter();
 		th.setLowerThreshold(100);
 		BufferedImage res = th.filter(img, null);
 		
-		buffImg2File(res, Constants.IMAGE_INTERMEDIATE_TARGET + Constants.FILE_NAME_INTERMEDIATE);
+		buffImg2File(res, "/tmp/a.png");
 		
+		EdgeFilter ef = new EdgeFilter();
+		ef.filter(res, null);
+		
+		buffImg2File(res, "/tmp/b.png");
 		
 		CannyEdgeDetector detector = new CannyEdgeDetector();
 
@@ -45,7 +53,12 @@ public class CannyTest {
 		detector.process();
 		BufferedImage edges = detector.getEdgesImage();
 		
-		buffImg2File(edges, Constants.IMAGE_FINAL_TARGET + Constants.FILE_NAME_TARGET);
+		
+		
+		BufferedImage finalImg = edges.getSubimage(87, 100, 20, 602);
+		
+		buffImg2File(finalImg, "/tmp/c.png");
+		getPixelColor(finalImg);
 
 	}
 
@@ -57,6 +70,23 @@ public class CannyTest {
 		} catch (IOException e) {
 		    
 		}
+	}
+	
+	private static void getPixelColor(BufferedImage image){
+		
+		for(int i=0; i<601; i++){
+			int c = image.getRGB(0,i);
+			int  r = (c & 0x00ff0000) >> 16;
+			int  g = (c & 0x0000ff00) >> 8;
+			int  b = c & 0x000000ff;
+			
+			System.out.println("Y="+i+"\tR="+r+" G="+g+" B="+b);
+		}
+		
+		
+		
+		// and the Java Color is ...
+		//Color color = new Color(red,green,blue);
 	}
 
 }
