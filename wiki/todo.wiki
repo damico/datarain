@@ -66,6 +66,8 @@ export LD_LIBRARY_PATH
  * http://www.rgagnon.com/javadetails/java-0257.html
  * http://getablogger.blogspot.com/2008/01/android-how-to-post-file-to-php-server.html
  * http://www.anddev.org/upload_files_to_web_server-t443-s30.html
+ * http://revistagloborural.globo.com/GloboRural/0,6993,EEC1582439-4528,00.html
+
 edge detector
 crop
 Canny edge detector
