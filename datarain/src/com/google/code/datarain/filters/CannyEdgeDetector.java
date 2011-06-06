@@ -1,4 +1,4 @@
-package com.google.code.datarain.tests;
+package com.google.code.datarain.filters;
 
 import java.awt.image.BufferedImage;
 import java.util.Arrays;

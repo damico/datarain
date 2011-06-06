@@ -9,6 +9,9 @@ public interface Constants {
 	public static final String FILE_NAME_SOURCE = "test1.jpg";
 	public static final String FILE_NAME_INTERMEDIATE = "Intermadiate_Image.png";
 	public static final String FILE_NAME_TARGET = "Final_Image.png";
+	public static final String APP_NAME = "DataRain";
+	public static final String APP_VERSION = "0.1";
+	public static final int W = 20;
 	
 	
 
