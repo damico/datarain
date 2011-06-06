@@ -13,6 +13,9 @@ import com.jhlabs.image.ThresholdFilter;
 
 public class DataRainPrototype {
 
+	private static final int HEIGHT = 602; 
+	
+	
 	/**
 	 * @param args
 	 */
@@ -24,12 +27,13 @@ public class DataRainPrototype {
 		
 		BufferedImage img = null;
 		try {
-		    img = ImageIO.read(new File("/tmp/real-test.jpg"));
+		    img = ImageIO.read(new File("/tmp/real-test3.jpg"));
 		} catch (IOException e) {
 		}
 		
 		GrayscaleFilter gf = new GrayscaleFilter();
-
+		gf.filter(img, null);
+		buffImg2File(img, "/tmp/init.png");
 		
 		ThresholdFilter th = new ThresholdFilter();
 		th.setLowerThreshold(100);
@@ -55,7 +59,7 @@ public class DataRainPrototype {
 		
 		
 		
-		BufferedImage finalImg = edges.getSubimage(87, 100, 20, 602);
+		BufferedImage finalImg = edges.getSubimage(60, 100, 100, 602);
 		
 		buffImg2File(finalImg, "/tmp/c.png");
 		getPixelColor(finalImg);
@@ -74,19 +78,32 @@ public class DataRainPrototype {
 	
 	private static void getPixelColor(BufferedImage image){
 		
-		for(int i=0; i<601; i++){
+		int r = 0;
+		int g = 0;
+		int b = 0;
+		
+		int linePos = 0;
+		
+		double ret = 0;
+		
+		for(int i=0; i<(HEIGHT-1); i++){
 			int c = image.getRGB(0,i);
-			int  r = (c & 0x00ff0000) >> 16;
-			int  g = (c & 0x0000ff00) >> 8;
-			int  b = c & 0x000000ff;
+			  r = (c & 0x00ff0000) >> 16;
+			  g = (c & 0x0000ff00) >> 8;
+			  b = c & 0x000000ff;
+			  linePos = i;
+			  //System.out.println("Y="+i+"\tR="+r+" G="+g+" B="+b);  
 			
-			System.out.println("Y="+i+"\tR="+r+" G="+g+" B="+b);
+			  if(r==255)	break;
+			
+			
+			 ret = (((HEIGHT - linePos)) * 100 / HEIGHT)*10;
+			
+			
 		}
 		
 		
-		
-		// and the Java Color is ...
-		//Color color = new Color(red,green,blue);
+		System.out.println("Result: = "+ret+" mm");
 	}
 
 }
